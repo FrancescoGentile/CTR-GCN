@@ -1,0 +1,8 @@
+# VSCode
+.vscode 
+
+__pycache__
+
+*.npz
+data/kinetics/exec.sh
+data/kinetics/input
