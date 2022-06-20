@@ -142,8 +142,6 @@ def get_body_center(keypoints: np.array, dataset: str) -> np.ndarray:
             
         if (center is None) or (tmp[2] > center[2]):
             center = tmp
-    
-    joints = [1, 8, 11]
 
     return center
 
