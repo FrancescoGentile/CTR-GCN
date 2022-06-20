@@ -10,7 +10,7 @@ import numpy as np
 from numpy.lib.format import open_memmap
 
 MIN_FRAMES = 10
-MAX_INTERLEAVE = 10
+MAX_INTERLEAVE = 50
 NOISE_THRESHOLD = 0.8
 SCORE_THRESHOLD = 2.5
 VALID_THRESHOLD = 0.7
@@ -81,7 +81,7 @@ def get_valid_frames(body: dict) -> list:
         #bscore = bbox[4]
         jscore_mean = np.mean(joints[:, 2])
         jscore_var = np.var(joints[:, 2])
-        if jscore_mean / (jscore_var + 0.000001) < SCORE_THRESHOLD: 
+        if jscore_mean < 0.5 and jscore_var > 0.3: 
             continue
         
         # denoise by spread
